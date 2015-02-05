@@ -20,8 +20,28 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+	min-height: 100%;
+	width: 100%;
+	height: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+.page-container {
+	min-height: 100%;
+}
+.page-container__child {
+	position: absolute;
+	top: 29%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+
 #logo {
-	height: 100px;
+	height: 110px;
 	width: 100%;
 	text-align: center;
 }
@@ -40,6 +60,7 @@ form {
 			margin: 3px;
 			float: left;
 			border: none;
+			padding-left: 5px;
 		}
 		#search-bar__input:focus {
 			outline: none;
@@ -53,9 +74,32 @@ form {
 			border: 1px solid #3d87ec;
 		}
 		svg {
-			// top: 1px;
-			// margin: 3px;
 			float: right;
+		}
+	}
+}
+
+footer {
+	font-family: arial, sans-serif;
+	height: 40px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background: #f2f2f2;
+	.footer-link {
+		display: block;
+		height: 40px;
+		position: absolute;
+		color: #666;
+		&.about {
+			float: left;
+			left: 30px;
+			top: 12px;
+		}
+		&.settings {
+			float: right;
+			right: 30px;
+			top: 12px;
 		}
 	}
 }
