@@ -1,0 +1,21 @@
+<h1>Search for your drug</h1>
+
+<form action="<%= find_submit_url %>" method="POST">
+	<input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+	<div class="input-group">
+	  <span class="input-group-addon" id="basic-addon1">A</span>
+	  <input name="find[name]" type="text" class="form-control" placeholder="Type drug name..." aria-describedby="basic-addon1">
+	</div>
+</form>
+
+<% if @results %>
+	<% @results.each do |result| %>
+		<li><%= result.tier %></li>
+		<li><%= result.carrier %></li>
+	<% end %>
+<% end %>
+
+

@@ -11,3 +11,20 @@
  *= require_self
  *= require_tree .
  */
+
+
+@import 'bootstrap';
+
+body {
+	background: #EEE;
+}
+
+a {
+	color: #333;
+}
+.generic {
+	color: green;
+}
+.brand {
+	color: red
+}

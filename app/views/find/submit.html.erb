@@ -1,0 +1,25 @@
+<br>
+	<a href="<%= root_url %>"><span class="glyphicon glyphicon-arrow-left"></span>  Back to search</a>
+
+<div class="panel-body">
+	<% if !@drugs.empty? %>
+	<div class="panel-heading">
+	    <h3 class="panel-title">We found your drug! These carriers carry your drug. </h3>
+	</div>
+	<ul>
+		<li><span class="generic">Green</span> is cheap!</li>
+		<li><span class="brand">Red</span> is expensive!</li>
+	</ul>
+	<div class="results-list">
+		<% @drugs.each do |drug| %>
+		Name: <%= drug.name.capitalize %><br>
+		Carrier: <%= drug.carrier.capitalize %><br>
+		State: <%= drug.state.capitalize %><br>
+		Tier: <%= drug.tier %><br>
+		Brand: <%= drug.brand_or_generic %><br><br>
+		<% end %>
+	</div>
+	<% else %>
+	  <p>We didn't find your drug...</p>
+	<% end %>
+</div>
