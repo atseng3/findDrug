@@ -15,16 +15,47 @@
 
 @import 'bootstrap';
 
-body {
-	background: #EEE;
+* {
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-	color: #333;
+#logo {
+	height: 100px;
+	width: 100%;
+	text-align: center;
 }
-.generic {
-	color: green;
-}
-.brand {
-	color: red
+
+form {
+	text-align: center;
+	#search-bar {
+		margin: auto;
+		text-align: left;
+		width: 572px;
+		height: 32px;
+		border: 1px solid #cdcdcd;
+		#search-bar__input {
+			height: 24px;
+			width: 530px;
+			margin: 3px;
+			float: left;
+			border: none;
+		}
+		#search-bar__input:focus {
+			outline: none;
+		}
+		#search-bar__input-sibling {
+			border: 1px solid transparent;
+			height: inherit;
+			padding: 3px;
+		}
+		#search-bar__input:focus + div {
+			border: 1px solid #3d87ec;
+		}
+		svg {
+			// top: 1px;
+			// margin: 3px;
+			float: right;
+		}
+	}
 }

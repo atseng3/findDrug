@@ -1,21 +1,39 @@
-<h1>Search for your drug</h1>
+<div id="logo">
+	<svg width="269px" height="100px" viewBox="0 0 197 67" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+	    <title>Slice 1</title>
+	    <desc>Created with Sketch.</desc>
+	    <defs></defs>
+	    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+	        <rect id="page" stroke="#979797" sketch:type="MSShapeGroup" x="-404" y="-260" width="1037" height="773"></rect>
+	        <text id="Medig" sketch:type="MSTextLayer" font-family="Avenir Next" font-size="52" font-weight="260">
+	            <tspan x="5" y="47" fill="#0266C8">M</tspan>
+	            <tspan x="52.112" y="47" fill="#F90101">e</tspan>
+	            <tspan x="81.024" y="47" fill="#F2B50F">d</tspan>
+	            <tspan x="113.576" y="47" fill="#00933B">i</tspan>
+	            <tspan x="125.328" y="47" fill="#F90101">g</tspan>
+	        </text>
+	        <g id="tablet" sketch:type="MSLayerGroup" transform="translate(160.000000, 19.000000)">
+	            <circle id="Oval-1" fill="#66CFE2" sketch:type="MSShapeGroup" cx="15" cy="15" r="15"></circle>
+	            <path d="M5.49066287,23.3013323 L22.575122,5.74557771 L24.7106794,7.94004703 L7.62622027,25.4958016 L5.49066287,23.3013323 L5.49066287,23.3013323 Z" id="Rectangle-5" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+	        </g>
+	    </g>
+	</svg>
+</div>
 
 <form action="<%= find_submit_url %>" method="POST">
 	<input
     type="hidden"
     name="authenticity_token"
     value="<%= form_authenticity_token %>">
-	<div class="input-group">
-	  <span class="input-group-addon" id="basic-addon1">A</span>
-	  <input name="find[name]" type="text" class="form-control" placeholder="Type drug name..." aria-describedby="basic-addon1">
+
+	<!-- <input id="search_bar" name="find[name]" type="text" class="" placeholder="  Search for a shemale..."> -->
+	<div id="search-bar">
+		<input type="text" name="find[name]" placeholder=" Search for a shemale..." id="search-bar__input" />
+		<div id="search-bar__input-sibling">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+				<path d="M12 14c1.655 0 2.99-1.345 2.99-3l0.010-6c0-1.66-1.34-3-3-3-1.655 0-3 1.34-3 3v6c0 1.655 1.345 3 3 3zM10.8 4.9c0-0.66 0.54-1.2 1.2-1.2s1.2 0.54 1.2 1.2l-0.010 6.2c0 0.66-0.535 1.2-1.19 1.2-0.66 0-1.2-0.54-1.2-1.2v-6.2zM17.3 11c0 3-2.535 5.1-5.3 5.1-2.76 0-5.3-2.1-5.3-5.1h-1.7c0 3.415 2.72 6.235 6 6.72v3.28h2v-3.28c3.28-0.485 6-3.305 6-6.72h-1.7z" fill="#000000"></path>
+			</svg>
+		</div>
 	</div>
 </form>
-
-<% if @results %>
-	<% @results.each do |result| %>
-		<li><%= result.tier %></li>
-		<li><%= result.carrier %></li>
-	<% end %>
-<% end %>
-
-
