@@ -6,8 +6,9 @@ class FindController < ApplicationController
 	end
 
 	def submit
-		name = drug_params['name']
-		@drugs = Find.where('name like ?', "%#{name}%")
+		@name = drug_params['name']
+		@drugs = Find.where('name like ?', "%#{@name}%")
+
 		# fail
 		# if @drugs.count == 0
 		# 	@results = nil

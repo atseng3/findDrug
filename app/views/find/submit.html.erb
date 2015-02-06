@@ -1,5 +1,5 @@
 <div class="result-page-header">
-	<div id="logo">
+	<a href="/" id="logo">
 		<svg width="135px" height="50px" viewBox="0 0 197 67" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
 		    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
 		        <rect id="page" stroke="#979797" sketch:type="MSShapeGroup" x="-404" y="-260" width="1037" height="773"></rect>
@@ -16,16 +16,16 @@
 		        </g>
 		    </g>
 		</svg>
-	</div>
+	</a>
 	<form action="<%= find_submit_url %>" method="POST">
 		<input
 	    type="hidden"
 	    name="authenticity_token"
 	    value="<%= form_authenticity_token %>">
 
-		<!-- <input id="search_bar" name="find[name]" type="text" class="" placeholder="  Search for a shemale..."> -->
 		<div id="search-bar" class="result-page">
-			<input type="text" name="find[name]" placeholder="Search." id="search-bar__input" />
+			<!-- @name not works?! -->
+			<input type="text" name="find[name]" id="search-bar__input" val="<%= @name %>"/>
 			<div id="search-bar__input-sibling">
 				<div class="icon-mnone"></div>
 			</div>
@@ -33,25 +33,43 @@
 	</form>
 </div>
 
-<div class="panel-body">
+<div id="results-tabs">
+	<div class="results-tab selected">Web</div>
+	<div class="results-tab">Images</div>
+	<div class="results-tab">Videos</div>
+
+</div>
+
+<div id="results-container">
 	<% if !@drugs.empty? %>
-	<div class="panel-heading">
-	    <h3 class="panel-title">We found your drug! These carriers carry your drug. </h3>
-	</div>
-	<ul>
-		<li><span class="generic">Green</span> is cheap!</li>
-		<li><span class="brand">Red</span> is expensive!</li>
-	</ul>
-	<div class="results-list">
-		<% @drugs.each do |drug| %>
-		Name: <%= drug.name.capitalize %><br>
-		Carrier: <%= drug.carrier.capitalize %><br>
-		State: <%= drug.state.capitalize %><br>
-		Tier: <%= drug.tier %><br>
-		Brand: <%= drug.brand_or_generic %><br><br>
-		<% end %>
-	</div>
+		<div>
+			<%= @drugs.count %> result (0.1 seconds)
+		</div>
+
+		<div class="results-list">
+			<% @drugs.each do |drug| %>
+			<p>
+				<a class="result-list__name" href="https://www.google.com/search?q=<%= @name %>&btnI=1"><%= drug.name.capitalize %></a><br>
+				<a class="result-list__carrier" href="https://google.com/search?q=<%= drug.carrier %>&btnI=1"><%= drug.carrier.capitalize %></a><br>
+				This drug is carried by <span><%= drug.carrier %></span> in <span><%= drug.state %></span>.<br>
+				It is carried under Tier <span><%= drug.tier %></span> and is a <span><%= drug.brand_or_generic %></span> brand.
+			</p>
+			<% end %>
+		</div>
+		
+
 	<% else %>
-	  <p>We didn't find your shemale...</p>
+
+		Your search - <b><%= @name %></b> - did not match any documents.<br><br>
+
+		Suggestions:<br><br>
+		<ul>
+			<li>Make sure all words are spelled correctly.</li>
+			<li>Try different keywords.</li>
+			<li>Try more general keywords.</li>
+		</ul>
+		
 	<% end %>
+	</div>
+
 </div>

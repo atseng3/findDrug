@@ -24,12 +24,13 @@ body {
 	min-height: 100%;
 	width: 100%;
 	height: auto;
-	position: fixed;
+	// position: fixed;
 	top: 0;
 	left: 0;
+	// overflow: scroll;
 }
 .page-container {
-	min-height: 679px;
+	min-height: 638px;
 	min-width: 1024px;
 	.page-container__header {
 		text-align: right;
@@ -136,33 +137,17 @@ form {
 	}
 }
 
-.result-page-header {
-	background: #f2f2f2;
-	padding: 5px 10px 5px 10px;
-	form {
-		text-align: left;
-		display: inline-block;
-		vertical-align: top;
-		margin-top: 8px;
-	}
-	#logo {
-		height: 50px;
-		width: inherit;
-		display: inline-block;
-		margin: 0 5px;
-	}
-}
-
 footer {
 	font-family: arial, sans-serif;
 	height: 40px;
-	position: fixed;
+	// position: fixed;
+	position: relative;
 	bottom: 0;
 	width: 100%;
 	background: #f2f2f2;
 	.footer-link {
 		display: block;
-		height: 40px;
+		height: 20px;
 		position: absolute;
 		color: #666;
 		&.about {
