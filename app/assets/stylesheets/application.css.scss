@@ -23,14 +23,18 @@
 body {
 	min-height: 100%;
 	width: 100%;
-	height: auto;
-	// position: fixed;
+	&.landing {
+		height: 100vh;
+	}
+	&.results {
+		height: auto;
+	}
 	top: 0;
 	left: 0;
-	// overflow: scroll;
 }
 .page-container {
 	min-height: 638px;
+	height: 100%;
 	min-width: 1024px;
 	.page-container__header {
 		text-align: right;
@@ -140,11 +144,16 @@ form {
 footer {
 	font-family: arial, sans-serif;
 	height: 40px;
-	// position: fixed;
 	position: relative;
 	bottom: 0;
 	width: 100%;
 	background: #f2f2f2;
+	&.landing {
+		position: fixed;
+	}
+	&.results {
+		position: relative;
+	}
 	.footer-link {
 		display: block;
 		height: 20px;

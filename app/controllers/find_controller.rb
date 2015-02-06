@@ -1,30 +1,19 @@
 class FindController < ApplicationController
 	def drug
-		# @drugs = Find.parsed_drugs
+		flash[:page] = 'landing'
 
 		render :drug
 	end
 
 	def submit
 		@name = drug_params['name']
-		@drugs = Find.where('name like ?', "%#{@name}%")
-
-		# fail
-		# if @drugs.count == 0
-		# 	@results = nil
-		# else
-		# 	@results = @drugs
-		# end
+		if @name != ''
+			@drugs = Find.where('name like ?', "%#{@name}%")
+			flash[:page] = 'results'
+		else 
+			@drugs = []
+		end
 		render :submit
-		# @drugs = Find.parsed_drugs
-		# drug_params['name'].downcase!
-		# if !@drugs[drug_params['name']]
-		# 	@results = nil
-		# else 
-		# 	@results = { name: drug_params['name'] }
-		# 	@results = @results.merge(@drugs[drug_params['name']])
-		# end
-		# render :submit
 	end
 
 	private

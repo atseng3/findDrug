@@ -6,11 +6,11 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="results">
 <%= yield %>
 
 </body>
-<footer>
+<footer class="<%= flash[:page] %>">
 	<a href="#" class="footer-link settings">Settings</a>
 	<a href="#" class="footer-link about">About</a>
 </footer>
