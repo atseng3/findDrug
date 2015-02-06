@@ -167,6 +167,8 @@ DEPENDENCIES
   pry-rails
   rails (= 4.0.2)
   rails_12factor (= 0.0.2)
+  rails_serve_static_assets
+  rails_stdout_logging
   sass-rails (>= 3.2)
   sdoc
   turbolinks
