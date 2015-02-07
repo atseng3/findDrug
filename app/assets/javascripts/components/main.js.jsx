@@ -68,6 +68,6 @@ $(document).ready(function() {
 		}
 	});
 
-	React.renderComponent(<HeaderBar />, $('.page-container__header')[0]);
+	React.renderComponent(<HeaderBar />, $('.header__icons')[0]);
 
 });
