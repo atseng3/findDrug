@@ -40,13 +40,7 @@ body {
 		text-align: right;
 		padding-top: 10px;
 		padding-right: 20px;
-		[class^="icon-"],[class*=" icon-"] {
-			cursor: pointer;
-			font-size: 24px;
-			display: inline-block;
-			vertical-align: top;
-			margin: 6px;
-		}
+		
 		.profile-icon {
 			display: inline-block;
 			cursor: pointer;
@@ -55,10 +49,22 @@ body {
 			width: 32px;
 			height: 32px;
 			border-radius: 150px;
-			// position: absolute;
-			// right: 20px;
-			// top: 10px;
+			margin: 0;
 		}
+	}
+}
+.fakeicon {
+	cursor: pointer;
+	font-size: 24px;
+	display: inline-block;
+	vertical-align: top;
+	margin: 6px;
+	position: relative;
+	.overlay {
+		position: absolute;
+		right: 0;
+		top: 100%;
+		color: red;
 	}
 }
 .page-container__child {

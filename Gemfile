@@ -74,3 +74,5 @@ end
 # gem 'debugger', group: [:development, :test]
 gem 'rails_stdout_logging'
 gem 'rails_serve_static_assets'
+
+gem 'react-rails', github: 'reactjs/react-rails', branch: 'master'
