@@ -38,9 +38,8 @@ body {
 	min-width: 1024px;
 	.page-container__header {
 		text-align: right;
-		padding-top: 10px;
+		padding-top: 15px;
 		padding-right: 20px;
-		
 		.profile-icon {
 			display: inline-block;
 			cursor: pointer;
@@ -49,7 +48,6 @@ body {
 			width: 32px;
 			height: 32px;
 			border-radius: 150px;
-			margin: 0;
 		}
 	}
 }
@@ -58,9 +56,16 @@ body {
 	font-size: 24px;
 	display: inline-block;
 	vertical-align: top;
-	margin: 6px;
+	// margin: 6px;
 	position: relative;
+	[class^="icon-"], [class*=" icon-"] { 
+		margin: 6px 10px;
+	}
+	.profile-icon {
+		margin: 0px 10px;
+	}
 	.overlay {
+		cursor: initial;
 		font-size: 18px;
 		position: absolute;
 		right: 0;
@@ -92,7 +97,27 @@ body {
 				margin: 16px;
 				border: 1px solid #c2c2c2;
 			}
+			.overlay__description {
+				width: 136px;
+				display: inline-block;
+				vertical-align: top;
+				.overlay__creator {
+					line-height: initial;
+					font-weight: bold;
+					display: block;
+					width: 136px;
+					height: 30px;
+					margin-top: 16px;
+					font-size: 16px;
+				}
+				.overlay__info {
+					line-height: initial;
+					font-weight: 200;
+					font-size: 15px;
+				}
+			}
 		}
+		
 		.overlay__button {
 			cursor: pointer;
 			display: block;
@@ -113,14 +138,10 @@ body {
 			background: #2f5bb7;
 		}
 	}
+
 }
 .page-container__child {
-	position: absolute;
-	top: 29%;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
+	padding: 10% 0px;
 }
 
 #logo {
@@ -200,6 +221,7 @@ footer {
 	position: relative;
 	bottom: 0;
 	width: 100%;
+	min-width: 1024px;
 	background: #f2f2f2;
 	&.landing {
 		position: fixed;

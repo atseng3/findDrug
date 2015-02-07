@@ -41,7 +41,8 @@ $(document).ready(function() {
 
 		render: function() {
 			return (
-				<div onClick={this.showIt} className={"fakeicon "+this.props.className}>
+				<div className={"fakeicon"}>
+					<div onClick={this.showIt} className={this.props.className}></div>
 					{this.state.showOverlay?<Overlay key="overlay"/>:null}
 				</div>
 			)
@@ -54,7 +55,12 @@ $(document).ready(function() {
 				<div className="overlay">
 					<div className="overlay__title">
 						<div className="overlay__image"></div>
-						<span>Albert Tseng</span>
+						<div className="overlay__description">
+							<div className="overlay__creator">Albert Tseng</div>
+							<div className="overlay__info">- Creator</div>
+							<div className="overlay__info">- Designer</div>
+							<div className="overlay__info">- Full Stack Engineer</div>
+						</div>
 					</div>
 					<a className="overlay__button" href="http://albertseng.com">View Profile</a>
 				</div>
