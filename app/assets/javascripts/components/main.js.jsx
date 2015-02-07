@@ -50,7 +50,15 @@ $(document).ready(function() {
 
 	var Overlay = React.createClass({
 		render: function() {
-			return <div className="overlay">find a medicine</div>
+			return (
+				<div className="overlay">
+					<div className="overlay__title">
+						<div className="overlay__image"></div>
+						<span>Albert Tseng</span>
+					</div>
+					<a className="overlay__button" href="http://albertseng.com">View Profile</a>
+				</div>
+			)
 		}
 	});
 
