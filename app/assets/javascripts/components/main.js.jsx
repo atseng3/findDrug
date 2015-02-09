@@ -26,24 +26,17 @@ $(document).ready(function() {
 	})
 
 	var FakeIcon = React.createClass({
-
-		getInitialState: function() {
-			return {
-				showOverlay: false
-			}
-		},
 		
-		showIt: function() {
-			this.setState({
-				showOverlay: !this.state.showOverlay
-			});
+		showIt: function(event) {
+			var $currentTarget = $(event.currentTarget);
+			$currentTarget.toggleClass('hiding');
 		},
 
 		render: function() {
 			return (
-				<div className={"fakeicon"}>
-					<div onClick={this.showIt} className={this.props.className}></div>
-					{this.state.showOverlay?<Overlay key="overlay"/>:null}
+				<div className="fakeicon hiding" onClick={this.showIt} >
+					<div className={this.props.className}></div>
+					<Overlay />
 				</div>
 			)
 		}
@@ -69,5 +62,28 @@ $(document).ready(function() {
 	});
 
 	React.renderComponent(<HeaderBar />, $('.header__icons')[0]);
+	$(document).click(function() {
+		$('.fakeicon').addClass('hiding');
+	});
+
+	// api: 'https://api.sendhub.com/v1/messages/?username=6504899461&api_key=a622558e9f2cc5134744c3892043aaf207eca250',
+
+	// cors_api_url: 'https://cors-anywhere.herokuapp.com/',
+
+	// doCORSRequest: function(options, printResult) {
+	//     var x = new XMLHttpRequest();
+	//     x.open(options.method, this.cors_api_url + options.url);
+	//     x.onload = x.onerror = function() {
+	//       printResult(
+	//         options.method + ' ' + options.url + '\n' +
+	//         x.status + ' ' + x.statusText + '\n\n' +
+	//         (x.responseText || '')
+	//       );
+	//     };
+	//     if (/^POST/i.test(options.method)) {
+	//       x.setRequestHeader('Content-Type', 'application/json');
+	//     }
+	//     x.send(options.data);
+	// },
 
 });

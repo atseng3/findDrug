@@ -20,7 +20,16 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+// #circuit {
+// 	background: url('circuit.png') center no-repeat;
+// 	width: 400px;
+// 	height: 200px;
+// 	background-size: cover;
+// }
+
 body {
+		// background: url('circuit.png') center no-repeat;
+		// background-size: cover;
 	min-height: 100%;
 	width: 100%;
 	&.landing {
@@ -57,6 +66,11 @@ body {
 		border-radius: 150px;
 	}
 }
+.fakeicon.hiding {
+	.overlay {
+		display: none;
+	}
+}
 .fakeicon {
 	cursor: pointer;
 	font-size: 24px;
@@ -87,7 +101,7 @@ body {
 		.overlay__title {
 			vertical-align: top;
 			height: 135px;
-			width: inherit;
+			width: 275px;
 			border-bottom: 1px solid #CCC;
 			line-height: 60px;
 			font-weight: 500;
@@ -147,7 +161,7 @@ body {
 
 }
 .page-container__child {
-	padding: 10% 0px;
+	padding: 16% 0px;
 }
 
 #logo {
