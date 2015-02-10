@@ -25,8 +25,7 @@
 	    value="<%= form_authenticity_token %>">
 
 		<div id="search-bar" class="result-page">
-			<!-- @name not works?! -->
-			<input type="text" name="find[name]" id="search-bar__input" val="<%= @name %>"/>
+			<input type="text" name="find[name]" id="search-bar__input" placeholder="Search Drug." value="<%= @name %>"/>
 			<div id="search-bar__input-sibling">
 				<div class="icon-mnone"></div>
 			</div>
