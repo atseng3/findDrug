@@ -44,16 +44,17 @@
 <div id="results-container">
 	<% if !@drugs.empty? %>
 		<div>
-			<%= @drugs.count %> result (0.1 seconds)
+			<% this = @carriers.count == 1 ? 'This ' : 'These ' %>
+			<%= this + @carriers.count.to_s + ' ' + 'result'.pluralize(@carriers.count) %> carry this drug under the following names: (0.1 seconds)
 		</div>
 
 		<div class="results-list">
-			<% @drugs.each do |drug| %>
+			<% @carriers.each do |carrier, drug_array| %>
 			<p>
-				<a class="result-list__name" href="https://www.google.com/search?q=<%= @name %>&btnI=1"><%= drug.name.capitalize %></a><br>
-				<a class="result-list__carrier" href="https://google.com/search?q=<%= drug.carrier %>&btnI=1"><%= drug.carrier.capitalize %></a><br>
-				This drug is carried by <span><%= drug.carrier %></span> in <span><%= drug.state %></span>.<br>
-				It is carried under Tier <span><%= drug.tier %></span> and is a <span><%= drug.brand_or_generic %></span> brand.
+				<a class="result-list__name" href="https://www.google.com/search?q=<%= carrier %>&btnI=1"><%= carrier.capitalize %></a><br>
+				<% drug_array.each do |drug| %>
+					&bull; <a class="result-list__carrier" href="https://google.com/search?q=<%= drug.name %>&btnI=1"><%= drug.name.capitalize %></a>, <b><%= drug.brand_or_generic.capitalize %></b> Tier, <%= drug.state %><br>
+				<% end %>
 			</p>
 			<% end %>
 		</div>
